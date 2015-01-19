@@ -13,7 +13,7 @@ class TwitterCredentialsController < ApplicationController
     # url = "https://api.twitter.com/1.1/search/tweets.json?q=%40twitterapi"
     encode_params = Addressable::URI.parse(params)
     url = "https://api.twitter.com/1.1/search/tweets.json?q=#{encode_params}"
-    headers = { "Authorization" => "Bearer AAAAAAAAAAAAAAAAAAAAAEVDWQAAAAAAKve7Q9RM2YmkO5iZIPGp6rhezSo%3DKAsecfDJLabCvgr31LrjbN1XlGmfEhyaQp3bYi9sMeKtn50W3H", "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8", "Accept-Encoding" => "gzip"}
+    headers = { "Authorization" => "Bearer ", "Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8", "Accept-Encoding" => "gzip"}
     begin
       puts url
       puts headers
