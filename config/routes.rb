@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'tweets' => 'twitter_credentials#tweets'
+  get "/search" => "twitters#search"
+  post "/search/:q" => "twitters#search_key"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'twitter#search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

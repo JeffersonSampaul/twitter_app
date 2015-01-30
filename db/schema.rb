@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116114802) do
+ActiveRecord::Schema.define(version: 20150121114257) do
 
-  create_table "twitter_credentials", force: true do |t|
+  create_table "twitter_search_keys", force: true do |t|
+    t.string   "key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twitter_search_results", force: true do |t|
+    t.integer  "twitter_search_key_id"
+    t.string   "name"
     t.string   "profile_image_url"
     t.integer  "retweet_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "twitter_search_results", ["twitter_search_key_id"], name: "index_twitter_search_results_on_twitter_search_key_id", using: :btree
 
 end
